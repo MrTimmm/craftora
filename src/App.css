@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+
+
+@font-face {
+  font-family: luckybones;
+  src: url('../public/fonts//luckybone.otf') format('opentype');
+    font-display: swap;
+
+}
+
+@font-face {
+  font-family: balanca;
+  src: url('../public/fonts/balanca.woff') format('woff');
+  font-display: swap;
+ 
+}
+
+body{
+  background: #f0ead8;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'luckybones';
+}
+
+
+a,p,li {
+  font-family: 'balanca';
+}
