@@ -38,9 +38,17 @@ const TestimonialsSection = () => {
           <span className="w-10 h-px bg-[#c8bfa8] opacity-50"></span>
           <span className="text-[0.65rem] tracking-[0.45em] uppercase text-[#c8bfa8]">Client Stories</span>
         </div>
-        <h2 className="font-['Cinzel'] text-[clamp(2.2rem,4vw,3.8rem)] font-normal leading-[1.15] text-[#F0EAD6] tracking-[0.02em] mb-16 reveal reveal-delay-1">
-          Words of<br/><em className="font-['Cormorant'] italic font-light text-[#c8bfa8]">love & gratitude</em>
-        </h2>
+        
+        {/* Title section with button at bottom right */}
+        <div className="flex flex-wrap justify-between items-end mb-16 gap-6">
+          <h2 className="font-['Cinzel'] text-[clamp(2.2rem,4vw,3.8rem)] font-normal leading-[1.15] text-[#F0EAD6] tracking-[0.02em] reveal reveal-delay-1">
+            Words of<br/><em className="font-['Cormorant'] italic font-light text-[#c8bfa8]">love & gratitude</em>
+          </h2>
+          <a href="https://g.page/r/CdeADXdKMLX_EBM/review" target='_blank'>
+          <button className="group px-8 py-3 border border-[#c8bfa8] bg-transparent text-[#c8bfa8] text-[0.7rem] tracking-[0.2em] uppercase font-['Cinzel'] transition-all duration-300 hover:bg-[#c8bfa8] hover:text-[#4a0d0d] hover:border-[#c8bfa8] reveal reveal-delay-1">
+           Review Us on Google
+          </button></a>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial) => (

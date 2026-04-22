@@ -49,9 +49,9 @@ const Footer = () => {
         <div className="flex flex-wrap justify-between items-center pt-8 gap-4">
           <span className="text-[0.72rem] text-[rgba(240,234,214,0.3)] tracking-[0.08em]">© 2025 Craftora Atelier. All rights reserved. Crafted with love.</span>
           <div className="flex gap-5">
-            <a href="#" className="w-9 h-9 flex items-center justify-center border border-[rgba(240,234,214,0.15)] text-[0.7rem] text-[rgba(240,234,214,0.4)] transition-all duration-300 hover:border-[rgba(240,234,214,0.5)] hover:text-[#F0EAD6] no-underline font-['Cinzel'] tracking-[0.05em]">In</a>
-            <a href="#" className="w-9 h-9 flex items-center justify-center border border-[rgba(240,234,214,0.15)] text-[0.7rem] text-[rgba(240,234,214,0.4)] transition-all duration-300 hover:border-[rgba(240,234,214,0.5)] hover:text-[#F0EAD6] no-underline font-['Cinzel'] tracking-[0.05em]">Pi</a>
-            <a href="#" className="w-9 h-9 flex items-center justify-center border border-[rgba(240,234,214,0.15)] text-[0.7rem] text-[rgba(240,234,214,0.4)] transition-all duration-300 hover:border-[rgba(240,234,214,0.5)] hover:text-[#F0EAD6] no-underline font-['Cinzel'] tracking-[0.05em]">Fb</a>
+            <a href="https://www.instagram.com/craftora_atelier_/" target='_blank' className="w-9 h-9 flex items-center justify-center border border-[rgba(240,234,214,0.15)] text-[0.7rem] text-[rgba(240,234,214,0.4)] transition-all duration-300 hover:border-[rgba(240,234,214,0.5)] hover:text-[#F0EAD6] no-underline font-['Cinzel'] tracking-[0.05em]">In</a>
+           
+            <a href="https://www.facebook.com/craftoraatelier" target='_blank' className="w-9 h-9 flex items-center justify-center border border-[rgba(240,234,214,0.15)] text-[0.7rem] text-[rgba(240,234,214,0.4)] transition-all duration-300 hover:border-[rgba(240,234,214,0.5)] hover:text-[#F0EAD6] no-underline font-['Cinzel'] tracking-[0.05em]">Fb</a>
           </div>
         </div>
       </div>

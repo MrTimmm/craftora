@@ -8,6 +8,7 @@ const CollectionsSection = () => {
       category: '01 / Ceremony',
       description: 'Handcrafted centrepieces and decorations for your ceremony space. Timeless, organic, unforgettable.',
       badge: 'Bestseller',
+      image: '/images/flower6.jpeg',
       gradient: 'linear-gradient(135deg,#4a0d0d,#6b1212)',
       delay: ''
     },
@@ -17,8 +18,9 @@ const CollectionsSection = () => {
       category: '02 / Gifting',
       description: 'Thoughtfully crafted gifts for milestones, anniversaries, and every moment worth commemorating.',
       badge: null,
+      image: '/images/tulip.jpg',
       gradient: 'linear-gradient(135deg,#5a1010,#8b1a1a)',
-      delay: 'reveal-delay-1 mt-0 lg:mt-12'
+      delay: ''
     },
     {
       id: 3,
@@ -26,8 +28,9 @@ const CollectionsSection = () => {
       category: '03 / Bespoke',
       description: 'Fully custom commissions. Share your vision and we\'ll craft something utterly unique, just for you.',
       badge: 'New',
+      image: '/images/flower2.jpeg',
       gradient: 'linear-gradient(135deg,#3a0a0a,#6b1212)',
-      delay: 'reveal-delay-2'
+      delay: ''
     }
   ];
 
@@ -53,59 +56,83 @@ const CollectionsSection = () => {
           {collections.map((collection) => (
             <div 
               key={collection.id}
-              className={`relative overflow-hidden bg-[#4a0d0d] reveal group ${collection.delay}`}
+              className={`relative overflow-hidden bg-[#4a0d0d] reveal group ${collection.delay} cursor-pointer transition-all duration-500 ease-in-out hover:shadow-2xl hover:shadow-black/30`}
             >
-              <div className="w-full pt-[130%] relative overflow-hidden transition-transform duration-700 ease-in-out group-hover:scale-105">
-                <div className="absolute inset-0" style={{background: collection.gradient}}>
-                  <svg viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[70%] mx-auto mt-16 opacity-30">
-                    {collection.id === 1 && (
-                      <>
-                        <ellipse cx="100" cy="120" rx="70" ry="90" stroke="#F0EAD6" strokeWidth="1.5" fill="none"/>
-                        <ellipse cx="100" cy="120" rx="50" ry="68" stroke="#F0EAD6" strokeWidth="1" fill="none" opacity="0.6"/>
-                        <path d="M100 30 C100 75, 100 165, 100 210" stroke="#F0EAD6" strokeWidth="1" opacity="0.5"/>
-                        <path d="M30 120 C65 120, 135 120, 170 120" stroke="#F0EAD6" strokeWidth="1" opacity="0.5"/>
-                        <path d="M48 60 C70 90, 130 90, 152 60" stroke="#F0EAD6" strokeWidth="0.8" opacity="0.35" fill="none"/>
-                        <path d="M48 180 C70 150, 130 150, 152 180" stroke="#F0EAD6" strokeWidth="0.8" opacity="0.35" fill="none"/>
-                        <circle cx="100" cy="120" r="12" stroke="#F0EAD6" strokeWidth="1" fill="none" opacity="0.5"/>
-                      </>
-                    )}
-                    {collection.id === 2 && (
-                      <>
-                        <path d="M100 20 C60 50, 30 100, 35 155 C40 205, 75 235, 100 235 C125 235, 160 205, 165 155 C170 100, 140 50, 100 20Z" stroke="#F0EAD6" strokeWidth="1.5" fill="none"/>
-                        <path d="M100 20 C115 70, 125 120, 120 165 C115 205, 105 225, 100 235" stroke="#F0EAD6" strokeWidth="1" fill="none" opacity="0.5"/>
-                        <path d="M35 155 C62 145, 88 155, 100 165 C112 175, 140 168, 165 155" stroke="#F0EAD6" strokeWidth="0.8" fill="none" opacity="0.5"/>
-                        <path d="M42 100 C65 90, 88 95, 100 85 C112 75, 138 80, 158 100" stroke="#F0EAD6" strokeWidth="0.8" fill="none" opacity="0.4"/>
-                        <circle cx="100" cy="130" r="15" stroke="#F0EAD6" strokeWidth="1" fill="none" opacity="0.4"/>
-                      </>
-                    )}
-                    {collection.id === 3 && (
-                      <>
-                        <rect x="25" y="30" width="150" height="185" rx="4" stroke="#F0EAD6" strokeWidth="1.5" fill="none"/>
-                        <rect x="40" y="45" width="120" height="155" rx="2" stroke="#F0EAD6" strokeWidth="0.8" fill="none" opacity="0.5"/>
-                        <path d="M25 90 C75 75, 125 105, 175 90" stroke="#F0EAD6" strokeWidth="0.8" fill="none" opacity="0.4"/>
-                        <path d="M25 145 C75 130, 125 160, 175 145" stroke="#F0EAD6" strokeWidth="0.8" fill="none" opacity="0.4"/>
-                        <path d="M100 30 L100 215" stroke="#F0EAD6" strokeWidth="0.6" opacity="0.3"/>
-                        <circle cx="100" cy="122" r="20" stroke="#F0EAD6" strokeWidth="0.8" fill="none" opacity="0.4"/>
-                        <circle cx="100" cy="122" r="8" stroke="#F0EAD6" strokeWidth="1" fill="none" opacity="0.5"/>
-                      </>
-                    )}
-                  </svg>
-                </div>
+              <div className="w-full pt-[130%] relative overflow-hidden">
+                <img 
+                  src={collection.image} 
+                  alt={collection.name}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                />
+                {/* Gradient overlay that changes on hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent transition-opacity duration-500 group-hover:opacity-90"></div>
               </div>
+              
               {collection.badge && (
-                <span className="absolute top-4 right-4 px-3 py-[0.3rem] font-['Cinzel'] text-[0.55rem] tracking-[0.25em] uppercase text-[#6B1212] bg-[#F0EAD6]">
+                <span className="absolute top-4 right-4 px-3 py-[0.3rem] font-['Cinzel'] text-[0.55rem] tracking-[0.25em] uppercase text-[#6B1212] bg-[#F0EAD6] z-20 transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg">
                   {collection.badge}
                 </span>
               )}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[rgba(74,13,13,0.95)] to-transparent p-6 pt-8 translate-y-[30%] transition-transform duration-500 ease-in-out group-hover:translate-y-0">
-                <div className="font-['Cinzel'] text-[0.6rem] tracking-[0.4em] text-[#c8bfa8] mb-1">{collection.category}</div>
-                <div className="font-['Cinzel'] text-[1.2rem] font-medium text-[#F0EAD6] mb-2">{collection.name}</div>
-                <div className="text-[0.82rem] text-[rgba(240,234,214,0.6)] leading-7 max-h-0 overflow-hidden transition-all duration-500 group-hover:max-h-20">{collection.description}</div>
+              
+              {/* Hover overlay panel */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(74,13,13,0.98)] via-[rgba(74,13,13,0.5)] to-transparent opacity-0 transition-all duration-500 group-hover:opacity-100 z-10"></div>
+              
+              {/* Content that slides up on hover */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 transition-all duration-500 ease-out group-hover:translate-y-0 z-20">
+                <div className="transform transition-all duration-500 delay-100">
+                  <div className="font-['Cinzel'] text-[0.6rem] tracking-[0.4em] text-[#c8bfa8] mb-1 opacity-80 group-hover:opacity-100">
+                    {collection.category}
+                  </div>
+                  <div className="font-['Cinzel'] text-[1.2rem] font-medium text-[#F0EAD6] mb-3">
+                    {collection.name}
+                  </div>
+                  <div className="overflow-hidden">
+                    <div className="text-[0.82rem] text-[rgba(240,234,214,0.7)] leading-relaxed max-h-0 opacity-0 transition-all duration-500 delay-150 group-hover:max-h-32 group-hover:opacity-100">
+                      {collection.description}
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        .reveal {
+          animation: fadeInUp 0.6s ease-out forwards;
+          opacity: 0;
+        }
+        
+        .reveal-delay-1 {
+          animation-delay: 0.2s;
+        }
+        
+        .reveal-delay-2 {
+          animation-delay: 0.4s;
+        }
+        
+        /* Smooth hover transition for all elements */
+        .group:hover .group-hover\\:scale-110 {
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Optional: Add a subtle border glow on hover */
+        .group:hover {
+          box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.3);
+        }
+      `}</style>
     </section>
   );
 };

@@ -69,7 +69,7 @@ const HeroSection = ({ scrollToSection }) => {
               
               {/* Flower Image */}
               <img 
-                src="/images/flower" 
+                src="/images/bg.png" 
                 alt="Decorative flower" 
                 className="absolute inset-0 w-full h-full object-cover"
               />
